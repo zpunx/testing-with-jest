@@ -9,6 +9,8 @@ export default function Tab(props) {
         return props.tabs.map(tab => {
             return (
                 <li
+                    role="tab"
+                    aria-selected={activeTab.name === tab.name}
                     key={tab.name}
                     className={`
                         tab--item 
