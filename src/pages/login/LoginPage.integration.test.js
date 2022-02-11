@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import LoginPage from './LoginPage';
+import * as loginService from '../../services/loginService';
 import moxios from 'moxios';
 
 describe('LoginPage', () => {
@@ -18,6 +19,39 @@ describe('LoginPage', () => {
     afterEach(() => {
         componentUnderTest.unmount();
         moxios.uninstall();
+    });
+
+    it('should call the loginService signIn callback', () => {        
+        const signInCallback = jest.spyOn(loginService, 'signIn');
+        
+        const emailInput = screen.getByRole('textbox', { name: /e\-mail/i });
+        const passwordInput = screen.getByLabelText(/password/i);
+        const submitButton = screen.getByRole('button', { name: /submit/i });
+        
+        userEvent.type(emailInput, 'bar@bar.com');
+        userEvent.type(passwordInput, '12345');
+        userEvent.click(submitButton);
+
+        expect(signInCallback).toHaveBeenCalled();
+    });
+
+    it('should call the loginService signUp callback', () => {        
+        const signUpCallback = jest.spyOn(loginService, 'signUp');
+        
+        const signUpTab = screen.getByRole('tab', { name: /sign up/i });    
+        userEvent.click(signUpTab);
+
+        const emailInput = screen.getByRole('textbox', { name: /e\-mail/i });
+        const passwordInput = screen.getByLabelText('Password');
+        const confirmPasswordInput = screen.getByLabelText('Confirm password');
+        const submitButton = screen.getByRole('button', { name: /submit/i });
+
+        userEvent.type(emailInput, 'bar@bar.com');
+        userEvent.type(passwordInput, '12345');
+        userEvent.type(confirmPasswordInput, '12345');
+        userEvent.click(submitButton);
+
+        expect(signUpCallback).toHaveBeenCalled();
     });
 
     it('should send a sign in request to the back-end', (done) => {        
