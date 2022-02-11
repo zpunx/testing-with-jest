@@ -2,7 +2,7 @@ import React from 'react';
 import './SignUpForm.css';
 
 export default function SignUpForm(props) {  
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         
         const isValid = (
@@ -12,7 +12,7 @@ export default function SignUpForm(props) {
         );
 
         if (!isValid) { return; }
-        props.onSubmit();
+        await props.onSubmit();
     }
 
     return (

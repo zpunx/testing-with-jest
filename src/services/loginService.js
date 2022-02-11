@@ -1,7 +1,19 @@
-export function signIn(username, password) {
-    console.log('sign-in!');
+import axios from "axios";
+
+export async function signIn(username, password) {
+    try {
+        const response = await axios.post('/user/signin', { username, password });
+        return response;
+    } catch (exception) {
+        throw new Error('user failed to sign in');
+    }
 };
 
-export function signUp(username, password) {
-    console.log('sign-up!');
+export async function signUp(username, password) {
+    try {
+        const response = await axios.post('/user/signup', { username, password });
+        return response;
+    } catch (exception) {
+        throw new Error('user failed to sign up');
+    }
 };

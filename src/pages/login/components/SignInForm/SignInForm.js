@@ -2,11 +2,11 @@ import React from 'react';
 import './SignInForm.css';
 
 export default function SignInForm(props) { 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         const isValid = (event.target.elements.email.value && event.target.elements.password.value);
         if (!isValid) { return; }
-        props.onSubmit();
+        await props.onSubmit();
     }
 
     return (

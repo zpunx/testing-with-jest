@@ -6,12 +6,12 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import * as loginService from '../../services/loginService';
 
 export default function LoginPage() {
-    function handleSignIn(event) {
-        loginService.signIn();
+    async function handleSignIn(event) {
+        await loginService.signIn();
     }
     
-    function handleSignUp(event) {
-        loginService.signUp();
+    async function handleSignUp(event) {
+        await loginService.signUp();
     }
 
     return (
