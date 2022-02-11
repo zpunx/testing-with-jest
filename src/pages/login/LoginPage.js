@@ -16,7 +16,7 @@ export default function LoginPage() {
 
     return (
         <div>
-            <section className="tab--container">
+            <section className="login--container">
                 <Tab 
                     tabs={[
                         { 

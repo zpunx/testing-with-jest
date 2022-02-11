@@ -19,7 +19,7 @@ export default function SignUpForm(props) {
         <div 
             id="sign_up--panel" 
             className="form--container" 
-            aria-label="Sign up form"
+            aria-label="Sign-up form"
         >
             <form data-testid="sign-up--form" onSubmit={(event) => handleSubmit(event)}>
                 <label className="form--label" htmlFor="email">E-mail</label>

@@ -13,7 +13,7 @@ export default function SignInForm(props) {
         <div 
             id="sign_in--panel" 
             className="form--container" 
-            aria-label="Sign in form"
+            aria-label="Sign-in form"
         >
             <form data-testid="sign-in--form" onSubmit={(event) => handleSubmit(event)}>
                 <label className="form--label" htmlFor="email">E-mail</label>

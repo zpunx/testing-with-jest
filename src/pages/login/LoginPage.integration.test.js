@@ -21,6 +21,21 @@ describe('LoginPage', () => {
         moxios.uninstall();
     });
 
+    it('should have a Tab component', () => {
+        expect(screen.getByRole('tablist')).toBeInTheDocument();
+        expect(screen.getByRole('tabpanel')).toBeInTheDocument();
+    });
+
+    it('should have a SignInForm component as the active tab content', () => {
+        expect(screen.getByLabelText('Sign-in form')).toBeInTheDocument();    
+    });
+
+    it('should have a SignUpForm component when the user clicks on the sign-up tab', () => {
+        const signUpTab = screen.getByRole('tab', { name: /sign up/i });
+        userEvent.click(signUpTab);
+        expect(screen.getByLabelText('Sign-up form')).toBeInTheDocument();    
+    });
+
     it('should call the loginService signIn callback', () => {        
         const signInCallback = jest.spyOn(loginService, 'signIn');
         

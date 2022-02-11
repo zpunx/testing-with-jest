@@ -26,7 +26,7 @@ export default function Tab(props) {
 
     return (
         <div>
-            <ul className="tab--list">
+            <ul role="tablist" className="tab--list">
                 { renderTabNavigation() }
             </ul>
             <div role="tabpanel">
