@@ -1,4 +1,4 @@
-import { registerUser } from './Expectations';
+import { registerUser } from './Exceptions';
 
 describe('registerUser', () => {
     it.skip('should throw an exception if username is falsy.', () => {             
