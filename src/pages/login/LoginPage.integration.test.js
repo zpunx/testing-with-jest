@@ -86,7 +86,7 @@ describe('LoginPage', () => {
         moxios.wait(() => {
             const request = moxios.requests.mostRecent();
             expect(request.url).toBe(signInEndpoint);
-            expect(request.config.method).toBe('post');
+            expect(request.config.method).toBe('get');
             done();
         });
     });

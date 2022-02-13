@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function signIn(username, password) {
     try {
-        const response = await axios.post('/user/signin', { username, password });
+        const response = await axios.get('/user/signin', { username, password });
         return response;
     } catch (exception) {
         throw new Error('user failed to sign in');
