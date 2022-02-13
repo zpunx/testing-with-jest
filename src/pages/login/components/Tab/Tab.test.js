@@ -16,14 +16,14 @@ describe('Tab', () => {
 
     it('should have an active tab', () => {
         const activeTab = screen.getByRole('tab', { name: /foo/i });
-        expect(activeTab).toHaveAttribute('aria-selected', "true");
+        expect(activeTab).toHaveAttribute('aria-selected', 'true');
     });
 
     it('should have all tabs rendered', () => {
         expect(screen.getAllByRole('tab').length).toEqual(mockedTabs.length);
     });
 
-    it('should render a the tab name', () => {
+    it('should render the tab name', () => {
         expect(screen.getByRole('tab', { name: /foo/i }).textContent).toEqual(mockedTabs[0].name);
     });
 

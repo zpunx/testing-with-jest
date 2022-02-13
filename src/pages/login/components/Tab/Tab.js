@@ -8,14 +8,15 @@ export default function Tab(props) {
 
     function renderTabNavigation() {
         return props.tabs.map(tab => {
+            const isActive = activeTab.name === tab.name;
             return (
                 <li
                     role="tab"
-                    aria-selected={activeTab.name === tab.name}
+                    aria-selected={isActive}
                     key={tab.name}
                     className={`
                         tab--item 
-                        ${ activeTab.name === tab.name ? 'tab--item__active' : '' }
+                        ${ isActive ? 'tab--item__active' : '' }
                     `}
                     onClick={() => setActiveTab(tab)}
                 >
