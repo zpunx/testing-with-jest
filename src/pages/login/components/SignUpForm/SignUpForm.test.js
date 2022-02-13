@@ -16,7 +16,7 @@ describe('SignUpForm', () => {
     });
 
     it('should have a email input', () => {
-        const input = screen.getByRole('textbox', { name: /e\-mail/i });
+        const input = screen.getByRole('textbox', { name: /email/i });
         expect(input).toBeInTheDocument();
     });
 
@@ -43,7 +43,7 @@ describe('SignUpForm', () => {
     it('should not call the submit callback if the password input is empty', () => {
         const submitButton = screen.getByRole('button', { name: /submit/i });
         
-        userEvent.type(screen.getByRole('textbox', { name: /e\-mail/i }), 'bar@bar.com');
+        userEvent.type(screen.getByRole('textbox', { name: /email/i }), 'bar@bar.com');
         userEvent.type(screen.getByLabelText('Confirm password'), '12345');
         userEvent.click(submitButton);
         
@@ -53,7 +53,7 @@ describe('SignUpForm', () => {
     it('should not call the submit callback if the confirm password input is empty', () => {
         const submitButton = screen.getByRole('button', { name: /submit/i });
         
-        userEvent.type(screen.getByRole('textbox', { name: /e\-mail/i }), 'bar@bar.com');
+        userEvent.type(screen.getByRole('textbox', { name: /email/i }), 'bar@bar.com');
         userEvent.type(screen.getByLabelText('Password'), '12345');
         userEvent.click(submitButton);
         
@@ -63,7 +63,7 @@ describe('SignUpForm', () => {
     it('should call a submit callback when the form is submitted', () => {
         const submitButton = screen.getByRole('button', { name: /submit/i });
         
-        userEvent.type(screen.getByRole('textbox', { name: /e\-mail/i }), 'bar@bar.com');
+        userEvent.type(screen.getByRole('textbox', { name: /email/i }), 'bar@bar.com');
         userEvent.type(screen.getByLabelText('Password'), '12345');
         userEvent.type(screen.getByLabelText('Confirm password'), '12345');
         userEvent.click(submitButton);

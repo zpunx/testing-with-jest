@@ -16,7 +16,7 @@ describe('SignInForm', () => {
     });
 
     it('should have a email input', () => {
-        const input = screen.getByRole('textbox', { name: /e\-mail/i })
+        const input = screen.getByRole('textbox', { name: /email/i })
         expect(input).toBeInTheDocument();
     });
 
@@ -37,7 +37,7 @@ describe('SignInForm', () => {
     it('should not call the submit callback if the password input is empty', () => {
         const submitButton = screen.getByRole('button', { name: /submit/i });
         
-        userEvent.type(screen.getByRole('textbox', { name: /e\-mail/i }), 'bar@bar.com');
+        userEvent.type(screen.getByRole('textbox', { name: /email/i }), 'bar@bar.com');
         userEvent.click(submitButton);
         
         expect(mockSubmitCallback).not.toHaveBeenCalled();
@@ -46,7 +46,7 @@ describe('SignInForm', () => {
     it('should call a submit callback when the form is submitted', () => {
         const submitButton = screen.getByRole('button', { name: /submit/i });
         
-        userEvent.type(screen.getByRole('textbox', { name: /e\-mail/i }), 'bar@bar.com');
+        userEvent.type(screen.getByRole('textbox', { name: /email/i }), 'bar@bar.com');
         userEvent.type(screen.getByLabelText(/password/i), '12345');
         userEvent.click(submitButton);
         

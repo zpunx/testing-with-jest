@@ -39,7 +39,7 @@ describe('LoginPage', () => {
     it('should call the loginService signIn callback', () => {        
         const signInCallback = jest.spyOn(loginService, 'signIn');
         
-        const emailInput = screen.getByRole('textbox', { name: /e\-mail/i });
+        const emailInput = screen.getByRole('textbox', { name: /email/i });
         const passwordInput = screen.getByLabelText(/password/i);
         const submitButton = screen.getByRole('button', { name: /submit/i });
         
@@ -56,7 +56,7 @@ describe('LoginPage', () => {
         const signUpTab = screen.getByRole('tab', { name: /sign up/i });    
         userEvent.click(signUpTab);
 
-        const emailInput = screen.getByRole('textbox', { name: /e\-mail/i });
+        const emailInput = screen.getByRole('textbox', { name: /email/i });
         const passwordInput = screen.getByLabelText('Password');
         const confirmPasswordInput = screen.getByLabelText('Confirm password');
         const submitButton = screen.getByRole('button', { name: /submit/i });
@@ -75,7 +75,7 @@ describe('LoginPage', () => {
             responseText: 'user signed in successfully'
         });
         
-        const emailInput = screen.getByRole('textbox', { name: /e\-mail/i });
+        const emailInput = screen.getByRole('textbox', { name: /email/i });
         const passwordInput = screen.getByLabelText(/password/i);
         const submitButton = screen.getByRole('button', { name: /submit/i });
         
@@ -100,7 +100,7 @@ describe('LoginPage', () => {
         const signUpTab = screen.getByRole('tab', { name: /sign up/i });    
         userEvent.click(signUpTab);
 
-        const emailInput = screen.getByRole('textbox', { name: /e\-mail/i });
+        const emailInput = screen.getByRole('textbox', { name: /email/i });
         const passwordInput = screen.getByLabelText('Password');
         const confirmPasswordInput = screen.getByLabelText('Confirm password');
         const submitButton = screen.getByRole('button', { name: /submit/i });

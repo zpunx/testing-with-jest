@@ -23,7 +23,7 @@ export default function SignUpForm(props) {
             aria-label="Sign-up form"
         >
             <form data-testid="sign-up--form" onSubmit={(event) => handleSubmit(event)}>
-                <label className="form--label" htmlFor="email">E-mail</label>
+                <label className="form--label" htmlFor="email">Email</label>
                 <input className="form--input" type="text" name="email" id="email" placeholder="foo@bar.com" />
                 <label className="form--label" htmlFor="password">Password</label>
                 <input className="form--input" type="password" name="password" id="password" />
