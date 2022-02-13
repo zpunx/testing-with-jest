@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Tab.css';
 
 export default function Tab(props) {
@@ -34,4 +35,14 @@ export default function Tab(props) {
             </div>
         </div>
     );
+}
+
+Tab.propTypes = {
+    tabs: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            content: PropTypes.element.isRequired,
+            active: PropTypes.bool,
+        })
+    ).isRequired,
 }

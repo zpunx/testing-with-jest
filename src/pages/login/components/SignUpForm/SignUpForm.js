@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './SignUpForm.css';
 
 export default function SignUpForm(props) {  
@@ -38,4 +39,8 @@ export default function SignUpForm(props) {
             </form>
         </div>
     );
+}
+
+SignUpForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
 }
